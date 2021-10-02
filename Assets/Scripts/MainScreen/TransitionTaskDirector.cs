@@ -8,8 +8,10 @@ public class TransitionTaskDirector : TaskDirector
     public GameObject target;
     
     void OnMouseUpAsButton() {
-        Vector3 targetPosition = (target.GetComponent(typeof(Transform)) as Transform).position;
-        cam.transform.position = new Vector3(targetPosition.x, targetPosition.y, cam.transform.position.z);
+        if (IsActive()) {
+            Vector3 targetPosition = (target.GetComponent(typeof(Transform)) as Transform).position;
+            cam.transform.position = new Vector3(targetPosition.x, targetPosition.y, cam.transform.position.z);
+        }
     }
     
     protected override void ResetTask() {

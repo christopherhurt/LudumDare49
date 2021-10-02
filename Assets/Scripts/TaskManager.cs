@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class TaskManager : MonoBehaviour
     public TaskDirector generatorDirector;
     public TaskDirector computerDirector;
     
+    public Text scoreText;
+    public int scoreInc;
+    
     public float timerDecay;
     public float initialTimerFactor;
     public float initialTimerRadius;
@@ -28,14 +32,16 @@ public class TaskManager : MonoBehaviour
   
     private Hashtable timeouts;
     private float startTime;
-    
     private float nextTime;
+    private int score;
   
     void Start()
     {
         timeouts = new Hashtable();
         startTime = Time.time;
         nextTime = startTime + initialWaitTime;
+        score = 0;
+        IncScore(0);
     }
 
     void Update()
@@ -103,7 +109,16 @@ public class TaskManager : MonoBehaviour
     }
     
     public void MarkComplete(TaskType type) {
+        bool removed = timeouts.ContainsKey(type);
         timeouts.Remove(type);
+        if (removed) {
+            IncScore(scoreInc);
+        }
+    }
+    
+    private void IncScore(int amount) {
+        score += amount;
+        scoreText.text = "Score: " + score;
     }
     
     void GameOver() {
