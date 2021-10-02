@@ -8,15 +8,9 @@ public class ClickTaskDirector : TaskDirector
     public int clicksRequired;
     
     private int clickCount;
-    
-    void Start()
-    {
-        ResetTask();
-    }
 
-    void OnMouseUpAsButton() // TODO: left mouse bu8tton only??
+    void OnMouseUpAsButton()
     {
-        Debug.Log("Press!!! " + Time.time); // TODO: remove
         if (IsActive()) {
             clickCount++;
             // TODO: play sound
