@@ -21,8 +21,13 @@ public class TaskManager : MonoBehaviour
     public TaskDirector generatorDirector;
     public TaskDirector computerDirector;
     
+    public Canvas gameCanvas;
     public Text scoreText;
     public int scoreInc;
+    
+    public Camera cam;
+    public Transform gameOverMenu;
+    public Text finalScoreText;
     
     public float timerDecay;
     public float initialTimerFactor;
@@ -34,6 +39,7 @@ public class TaskManager : MonoBehaviour
     private float startTime;
     private float nextTime;
     private int score;
+    private bool gameOver;
   
     void Start()
     {
@@ -42,24 +48,27 @@ public class TaskManager : MonoBehaviour
         nextTime = startTime + initialWaitTime;
         score = 0;
         IncScore(0);
+        gameOver = false;
     }
 
     void Update()
     {
-        // Check for timed out tasks
-        foreach (TaskType task in TaskType.GetValues(typeof(TaskType))) {
-            if (timeouts.ContainsKey(task) && (float)timeouts[task] <= Time.time) {
-                GameOver();
+        if (!gameOver) {
+            // Check for timed out tasks
+            foreach (TaskType task in TaskType.GetValues(typeof(TaskType))) {
+                if (timeouts.ContainsKey(task) && (float)timeouts[task] <= Time.time) {
+                    GameOver();
+                }
             }
-        }
-        // Start a new task, reset task timer
-        if (Time.time >= nextTime) {
-            bool success = StartTask();
-            float factor = Random.value * (2 * initialTimerRadius) + (initialTimerFactor - initialTimerRadius);
-            if (!success) { // If no task can be started, cut the next time by a factor
-                factor *= taskStartFailFactor;
+            // Start a new task, reset task timer
+            if (Time.time >= nextTime) {
+                bool success = StartTask();
+                float factor = Random.value * (2 * initialTimerRadius) + (initialTimerFactor - initialTimerRadius);
+                if (!success) { // If no task can be started, cut the next time by a factor
+                    factor *= taskStartFailFactor;
+                }
+                nextTime = Time.time + (factor * timerDecay) / ((Time.time - startTime) + timerDecay);
             }
-            nextTime = Time.time + (factor * timerDecay) / ((Time.time - startTime) + timerDecay);
         }
     }
     
@@ -109,16 +118,19 @@ public class TaskManager : MonoBehaviour
     }
     
     public void MarkComplete(TaskType type) {
-        bool removed = timeouts.ContainsKey(type);
-        timeouts.Remove(type);
-        if (removed) {
-            IncScore(scoreInc);
+        if (!gameOver) {
+            bool removed = timeouts.ContainsKey(type);
+            timeouts.Remove(type);
+            if (removed) {
+                IncScore(scoreInc);
+            }
         }
     }
     
     private void IncScore(int amount) {
         score += amount;
         scoreText.text = "Score: " + score;
+        finalScoreText.text = "Score: " + score;
     }
     
     public float GetTimeRemaining(TaskType type) {
@@ -129,9 +141,10 @@ public class TaskManager : MonoBehaviour
         }
     }
     
-    void GameOver() {
-        // TODO: transition to game over screen, report score
-        //Debug.Log("GAME OVER!!");
+    private void GameOver() {
+        cam.transform.position = new Vector3(gameOverMenu.position.x, gameOverMenu.position.y, cam.transform.position.z);
+        gameCanvas.gameObject.SetActive(false);
+        gameOver = true;
     }
     
 }
