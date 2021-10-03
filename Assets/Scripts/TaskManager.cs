@@ -131,7 +131,7 @@ public class TaskManager : MonoBehaviour
     
     void GameOver() {
         // TODO: transition to game over screen, report score
-        Debug.Log("GAME OVER!!");
+        //Debug.Log("GAME OVER!!");
     }
     
 }
