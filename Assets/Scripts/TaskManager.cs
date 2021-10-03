@@ -121,6 +121,14 @@ public class TaskManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
     
+    public float GetTimeRemaining(TaskType type) {
+        if (timeouts.ContainsKey(type)) {
+            return (float)timeouts[type] - Time.time;
+        } else {
+            return 0.0f;
+        }
+    }
+    
     void GameOver() {
         // TODO: transition to game over screen, report score
         Debug.Log("GAME OVER!!");

@@ -29,6 +29,10 @@ public abstract class TaskDirector : MonoBehaviour
         return active;
     }
     
+    public float GetTimeout() {
+        return timeout;
+    }
+    
     public void Complete() {
         active = false;
         indicator.SetActive(false);
