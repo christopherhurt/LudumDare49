@@ -15,11 +15,6 @@ public class ComputerTasker : Tasker
     private bool started;
     private int remaining;
     
-    void Start() {
-        started = false;
-        remaining = 0;
-    }
-    
     void Update() {
         if (director.IsActive() && !started) {
             for (int i = 0; i < spawnCount; i++) {
@@ -32,6 +27,7 @@ public class ComputerTasker : Tasker
     
     public void ReportTargetClicked() {
         remaining--;
+        director.PlayActionSound();
         if (remaining <= 0) {
             started = false;
             director.UpdateProgress(1.0f);
@@ -49,7 +45,8 @@ public class ComputerTasker : Tasker
     }
     
     public override void Reset() {
-        // Do nothing
+        started = false;
+        remaining = 0;
     }
     
 }

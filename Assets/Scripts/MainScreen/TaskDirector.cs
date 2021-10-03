@@ -11,6 +11,14 @@ public abstract class TaskDirector : MonoBehaviour
     public ActiveIndicator indicator;
     public TaskManager.TaskType type;
     public float timeout;
+    
+    public AudioSource audioSource;
+    public AudioClip activateSound;
+    public float activateSoundVolume;
+    public AudioClip completeSound;
+    public float completeSoundVolume;
+    public AudioClip actionSound;
+    public float actionSoundVolume;
 
     private bool active;
 
@@ -22,7 +30,10 @@ public abstract class TaskDirector : MonoBehaviour
     public void Activate() {
         active = true;
         indicator.SetActive(true);
-        // TODO: play sound
+        if (activateSound != null) {
+            float volume = activateSoundVolume > 0.0f ? activateSoundVolume : 1.0f;
+            audioSource.PlayOneShot(activateSound, volume);
+        }
     }
     
     public bool IsActive() {
@@ -36,10 +47,20 @@ public abstract class TaskDirector : MonoBehaviour
     public void Complete() {
         active = false;
         indicator.SetActive(false);
-        // TODO: play sound
+        if (completeSound != null) {
+            float volume = completeSoundVolume > 0.0f ? completeSoundVolume : 1.0f;
+            audioSource.PlayOneShot(completeSound, volume);
+        }
         cam.transform.position = new Vector3(origin.position.x, origin.position.y, cam.transform.position.z);
         ResetTask();
         manager.MarkComplete(type);
+    }
+    
+    public void PlayActionSound() {
+        if (actionSound != null) {
+            float volume = actionSoundVolume > 0.0f ? actionSoundVolume : 1.0f;
+            audioSource.PlayOneShot(actionSound, volume);
+        }
     }
     
     protected abstract void ResetTask();

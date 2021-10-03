@@ -11,13 +11,10 @@ public class CatFoodBowlTasker : Tasker
     
     private int foodCount;
     
-    void Start() {
-        Reset();
-    }
-    
     public void AddFood() {
         foodCount++;
         UpdateFoodSprite();
+        director.PlayActionSound();
         if (foodCount >= expectedFood) {
             director.UpdateProgress(1.0f);
         }

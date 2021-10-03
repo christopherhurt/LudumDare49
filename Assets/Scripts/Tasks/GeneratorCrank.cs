@@ -7,15 +7,18 @@ public class GeneratorCrank : Tasker
     
     public Camera cam;
     public float expectedCranks;
+    public float cranksPerSfx;
     
     private float totalRotation;
     private Vector3 referencePos;
     private bool dragStarted;
+    private float nextCrankSfx;
     
     public override void Reset() {
         transform.parent.rotation = Quaternion.Euler(0, 0, 0);
         totalRotation = 0.0f;
         dragStarted = false;
+        nextCrankSfx = cranksPerSfx * 360.0f;
     }
     
     void OnMouseDown() {
@@ -43,7 +46,11 @@ public class GeneratorCrank : Tasker
                     / (Mathf.Sqrt(oldX * oldX + oldY * oldY) * Mathf.Sqrt(newX * newX + newY * newY)));
                 transform.parent.rotation = Quaternion.Euler(0, 0, totalRotation);
             }
-            if (Mathf.Abs(totalRotation) >= expectedCranks * 360.0) {
+            if (Mathf.Abs(totalRotation) >= nextCrankSfx) {
+                nextCrankSfx += cranksPerSfx * 360.0f;
+                director.PlayActionSound();
+            }
+            if (Mathf.Abs(totalRotation) >= expectedCranks * 360.0f) {
                 director.UpdateProgress(1.0f);
             }
             referencePos = Input.mousePosition;

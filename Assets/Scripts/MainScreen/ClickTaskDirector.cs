@@ -13,7 +13,7 @@ public class ClickTaskDirector : TaskDirector
     {
         if (IsActive()) {
             clickCount++;
-            // TODO: play sound
+            PlayActionSound();
             if (clickCount >= clicksRequired) {
                 Complete();
             }
