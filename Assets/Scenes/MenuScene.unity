@@ -1594,7 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionsText: Your cat requires an infinite amount of cat food to sustain itself.
-    Feed her when she meows by dragging food from the box to the dish.
+    Feed her when she hisses by dragging food from the box to the dish.
 --- !u!50 &930239471
 Rigidbody2D:
   serializedVersion: 4
