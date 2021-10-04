@@ -291,7 +291,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b5bbbb8caee7c4b4e94fbd83643fb38e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.538
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1294,11 +1294,11 @@ MonoBehaviour:
   timeout: 10
   audioSource: {fileID: 1422212286}
   activateSound: {fileID: 8300000, guid: 6e2b1d9748a8c8643a06651f4cde8411, type: 3}
-  activateSoundVolume: 0
+  activateSoundVolume: 0.7
   completeSound: {fileID: 8300000, guid: 1baafcf1fafa80f4081fb5c006471cab, type: 3}
   completeSoundVolume: 0
   actionSound: {fileID: 8300000, guid: 0afa148696f31c64b8d19fc48deb59cf, type: 3}
-  actionSoundVolume: 0
+  actionSoundVolume: 0.7
   failText: Your mom busted through the door and beat your ass.
   clicksRequired: 8
 --- !u!50 &821159085
@@ -1452,9 +1452,9 @@ MonoBehaviour:
   type: 3
   timeout: 10
   audioSource: {fileID: 1422212286}
-  activateSound: {fileID: 0}
+  activateSound: {fileID: 8300000, guid: 63a1366068624cd4fbc247af2c127ce0, type: 3}
   activateSoundVolume: 0
-  completeSound: {fileID: 0}
+  completeSound: {fileID: 8300000, guid: 59cbcf4bef570f84ead65b87b74b2765, type: 3}
   completeSoundVolume: 0
   actionSound: {fileID: 8300000, guid: ba06d1528c4f82d40a7290b96046b3a1, type: 3}
   actionSoundVolume: 0
@@ -1723,12 +1723,12 @@ MonoBehaviour:
   type: 2
   timeout: 10
   audioSource: {fileID: 1422212286}
-  activateSound: {fileID: 0}
-  activateSoundVolume: 0
-  completeSound: {fileID: 0}
-  completeSoundVolume: 0
-  actionSound: {fileID: 0}
-  actionSoundVolume: 0
+  activateSound: {fileID: 8300000, guid: da1af8cbfa6b93445b06246fef63fbd8, type: 3}
+  activateSoundVolume: 0.15
+  completeSound: {fileID: 8300000, guid: 3a2c0bc99a8b04e4cb602fa8a235ed5c, type: 3}
+  completeSoundVolume: 0.15
+  actionSound: {fileID: 8300000, guid: 75e262262888b6249bfaf2d4ffd05598, type: 3}
+  actionSoundVolume: 0.5
   failText: Your internet was fully cut off.
   clicksRequired: 8
 --- !u!1 &944107256
@@ -3121,7 +3121,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3675,7 +3675,7 @@ MonoBehaviour:
   completeSound: {fileID: 8300000, guid: fd569bf934f7dc944b534a891002fe47, type: 3}
   completeSoundVolume: 0
   actionSound: {fileID: 8300000, guid: bdc1e07bbac81c84ca82cf0fdad4c3d9, type: 3}
-  actionSoundVolume: 0
+  actionSoundVolume: 0.25
   failText: Your brother died.
   clicksRequired: 8
 --- !u!1 &1784251815
@@ -4418,9 +4418,9 @@ MonoBehaviour:
   type: 5
   timeout: 10
   audioSource: {fileID: 1422212286}
-  activateSound: {fileID: 0}
+  activateSound: {fileID: 8300000, guid: 07741f93a355611438011aeea80accaf, type: 3}
   activateSoundVolume: 0
-  completeSound: {fileID: 0}
+  completeSound: {fileID: 8300000, guid: 0b2a8f31445f03a40b9d0d43a2e3862a, type: 3}
   completeSoundVolume: 0
   actionSound: {fileID: 8300000, guid: 0e3e3eade3a5ce84c86b807033454e47, type: 3}
   actionSoundVolume: 0
@@ -4660,9 +4660,9 @@ MonoBehaviour:
   type: 4
   timeout: 10
   audioSource: {fileID: 1422212286}
-  activateSound: {fileID: 0}
+  activateSound: {fileID: 8300000, guid: d429c6b0fad86804f9a32527c03a269c, type: 3}
   activateSoundVolume: 0
-  completeSound: {fileID: 0}
+  completeSound: {fileID: 8300000, guid: fd2b5b876bd34764096cb735cd8db155, type: 3}
   completeSoundVolume: 0
   actionSound: {fileID: 8300000, guid: 3e885907441539848805c6d85dd1bfc0, type: 3}
   actionSoundVolume: 0
