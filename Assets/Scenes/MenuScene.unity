@@ -3366,7 +3366,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: GAME TITLE HERE
+  m_Text: IT'S TIME TO GAME
 --- !u!222 &2009451482
 CanvasRenderer:
   m_ObjectHideFlags: 0
