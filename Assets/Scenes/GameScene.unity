@@ -241,9 +241,10 @@ MonoBehaviour:
   scoreInc: 5
   cam: {fileID: 519420031}
   gameOverMenu: {fileID: 750399893}
+  gameOverFailText: {fileID: 1356334151}
   finalScoreText: {fileID: 969040843}
-  timerDecay: 400
-  initialTimerFactor: 5
+  timerDecay: 200
+  initialTimerFactor: 6
   initialTimerRadius: 1
   taskStartFailFactor: 0.5
   initialWaitTime: 3
@@ -263,7 +264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &146057203
 Transform:
   m_ObjectHideFlags: 0
@@ -288,9 +289,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f5e2b4190f3ecc6438270c046b534329, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b5bbbb8caee7c4b4e94fbd83643fb38e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.538
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -621,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   director: {fileID: 1861159007}
   baseTarget: {fileID: 192948068}
-  spawnCount: 3
+  spawnCount: 4
   spawnCenterX: 0
   spawnCenterY: 0
   spawnWidth: 1.25
@@ -1241,8 +1242,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0064767, y: 0.0064767, z: 0.0064767}
   m_Children:
-  - {fileID: 969040842}
   - {fileID: 1301025955}
+  - {fileID: 1356334150}
+  - {fileID: 969040842}
   - {fileID: 1530939933}
   m_Father: {fileID: 1446270702}
   m_RootOrder: 0
@@ -1291,13 +1293,14 @@ MonoBehaviour:
   type: 0
   timeout: 10
   audioSource: {fileID: 1422212286}
-  activateSound: {fileID: 0}
+  activateSound: {fileID: 8300000, guid: 6e2b1d9748a8c8643a06651f4cde8411, type: 3}
   activateSoundVolume: 0
-  completeSound: {fileID: 0}
+  completeSound: {fileID: 8300000, guid: 1baafcf1fafa80f4081fb5c006471cab, type: 3}
   completeSoundVolume: 0
-  actionSound: {fileID: 0}
+  actionSound: {fileID: 8300000, guid: 0afa148696f31c64b8d19fc48deb59cf, type: 3}
   actionSoundVolume: 0
-  clicksRequired: 5
+  failText: Your mom busted through the door and beat your ass.
+  clicksRequired: 8
 --- !u!50 &821159085
 Rigidbody2D:
   serializedVersion: 4
@@ -1453,8 +1456,9 @@ MonoBehaviour:
   activateSoundVolume: 0
   completeSound: {fileID: 0}
   completeSoundVolume: 0
-  actionSound: {fileID: 0}
+  actionSound: {fileID: 8300000, guid: ba06d1528c4f82d40a7290b96046b3a1, type: 3}
   actionSoundVolume: 0
+  failText: Your cat died of starvation.
   target: {fileID: 2146492527}
 --- !u!50 &839679139
 Rigidbody2D:
@@ -1725,7 +1729,8 @@ MonoBehaviour:
   completeSoundVolume: 0
   actionSound: {fileID: 0}
   actionSoundVolume: 0
-  clicksRequired: 5
+  failText: Your internet was fully cut off.
+  clicksRequired: 8
 --- !u!1 &944107256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1840,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 750399893}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2175,7 +2180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   director: {fileID: 2143643260}
   cam: {fileID: 519420031}
-  expectedCranks: 5
+  expectedCranks: 4
   cranksPerSfx: 1
 --- !u!1 &1121343149
 GameObject:
@@ -2945,11 +2950,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 750399893}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301025956
@@ -2993,6 +2998,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301025954}
+  m_CullTransparentMesh: 1
+--- !u!1 &1356334149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356334150}
+  - component: {fileID: 1356334152}
+  - component: {fileID: 1356334151}
+  m_Layer: 0
+  m_Name: FailText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1356334150
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356334149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 750399893}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.0000038146973}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1356334151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356334149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Placeholder text.
+--- !u!222 &1356334152
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356334149}
   m_CullTransparentMesh: 1
 --- !u!1 &1422212284
 GameObject:
@@ -3238,7 +3322,7 @@ RectTransform:
   - {fileID: 743946003}
   - {fileID: 1143068464}
   m_Father: {fileID: 750399893}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3586,13 +3670,14 @@ MonoBehaviour:
   type: 1
   timeout: 10
   audioSource: {fileID: 1422212286}
-  activateSound: {fileID: 8300000, guid: 86a0611eb5ed9d144a7cf0d273267b94, type: 3}
+  activateSound: {fileID: 8300000, guid: 55f441dda58943a4690ca557713654d4, type: 3}
   activateSoundVolume: 0
-  completeSound: {fileID: 8300000, guid: 33665ded98139cb4ebcee031e624aa54, type: 3}
+  completeSound: {fileID: 8300000, guid: fd569bf934f7dc944b534a891002fe47, type: 3}
   completeSoundVolume: 0
-  actionSound: {fileID: 8300000, guid: 452ad63384df7514ab0e7e00a6457306, type: 3}
+  actionSound: {fileID: 8300000, guid: bdc1e07bbac81c84ca82cf0fdad4c3d9, type: 3}
   actionSoundVolume: 0
-  clicksRequired: 5
+  failText: Your brother died.
+  clicksRequired: 8
 --- !u!1 &1784251815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4181,7 +4266,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7cf92b2076a5511488f0f7b16d6cbcca, type: 3}
   - {fileID: 21300000, guid: 0e9306057497b764580e356026d5a14b, type: 3}
   - {fileID: 21300000, guid: b2b6cd2e8ed105c448a62cb5bafa9a11, type: 3}
-  expectedFood: 6
+  expectedFood: 3
 --- !u!1 &1861159002
 GameObject:
   m_ObjectHideFlags: 0
@@ -4337,8 +4422,9 @@ MonoBehaviour:
   activateSoundVolume: 0
   completeSound: {fileID: 0}
   completeSoundVolume: 0
-  actionSound: {fileID: 0}
+  actionSound: {fileID: 8300000, guid: 0e3e3eade3a5ce84c86b807033454e47, type: 3}
   actionSoundVolume: 0
+  failText: You lost the video game.
   target: {fileID: 417838233}
 --- !u!1 &2001145311
 GameObject:
@@ -4578,8 +4664,9 @@ MonoBehaviour:
   activateSoundVolume: 0
   completeSound: {fileID: 0}
   completeSoundVolume: 0
-  actionSound: {fileID: 0}
+  actionSound: {fileID: 8300000, guid: 3e885907441539848805c6d85dd1bfc0, type: 3}
   actionSoundVolume: 0
+  failText: The power went out, shutting off your computer.
   target: {fileID: 1748506430}
 --- !u!1 &2146492527
 GameObject:

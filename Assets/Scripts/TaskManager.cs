@@ -27,6 +27,7 @@ public class TaskManager : MonoBehaviour
     
     public Camera cam;
     public Transform gameOverMenu;
+    public Text gameOverFailText;
     public Text finalScoreText;
     
     public float timerDecay;
@@ -57,7 +58,7 @@ public class TaskManager : MonoBehaviour
             // Check for timed out tasks
             foreach (TaskType task in TaskType.GetValues(typeof(TaskType))) {
                 if (timeouts.ContainsKey(task) && (float)timeouts[task] <= Time.time) {
-                    GameOver();
+                    GameOver(task);
                 }
             }
             // Start a new task, reset task timer
@@ -141,7 +142,8 @@ public class TaskManager : MonoBehaviour
         }
     }
     
-    private void GameOver() {
+    private void GameOver(TaskType failType) {
+        gameOverFailText.text = GetDirector(failType).failText;
         cam.transform.position = new Vector3(gameOverMenu.position.x, gameOverMenu.position.y, cam.transform.position.z);
         gameCanvas.gameObject.SetActive(false);
         gameOver = true;

@@ -19,6 +19,7 @@ public abstract class TaskDirector : MonoBehaviour
     public float completeSoundVolume;
     public AudioClip actionSound;
     public float actionSoundVolume;
+    public string failText = "";
 
     private bool active;
 

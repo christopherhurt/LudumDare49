@@ -260,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 145, y: 205}
-  m_SizeDelta: {x: -965.9, y: -425.8}
+  m_AnchoredPosition: {x: 158.6, y: 217.12}
+  m_SizeDelta: {x: -988.47, y: -450.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205355108
 MonoBehaviour:
@@ -347,7 +347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0f2f654d465574ca344a296f4c43b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionsText: Yung Router
+  instructionsText: You bought the best of the best routers, but your room is so
+    hot and stuffy that the antennas on it are melting. Fix them up by clicking the
+    antennas repeatedly.
 --- !u!50 &217125484
 Rigidbody2D:
   serializedVersion: 4
@@ -794,7 +796,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0f2f654d465574ca344a296f4c43b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionsText: Yung Computer
+  instructionsText: Luckily your favorite video game is the most simplistic game
+    ever created. When the targets are ready and the screen lights up, click the
+    targets to keep the game going.
 --- !u!50 &578031748
 Rigidbody2D:
   serializedVersion: 4
@@ -939,7 +943,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0f2f654d465574ca344a296f4c43b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionsText: Yung Mom
+  instructionsText: Your mom is calling for you to come and eat your dinner. Tell
+    her off by clicking the door repeatedly.
 --- !u!50 &582658768
 Rigidbody2D:
   serializedVersion: 4
@@ -1588,7 +1593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0f2f654d465574ca344a296f4c43b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionsText: Yung Cat
+  instructionsText: Your cat requires an infinite amount of cat food to sustain itself.
+    Feed her when she meows by dragging food from the box to the dish.
 --- !u!50 &930239471
 Rigidbody2D:
   serializedVersion: 4
@@ -2063,8 +2069,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000019073}
-  m_SizeDelta: {x: 229.6, y: 136.5}
+  m_AnchoredPosition: {x: 0.78, y: 0.000010669}
+  m_SizeDelta: {x: 215.09, y: 107.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153817592
 MonoBehaviour:
@@ -2088,10 +2094,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -2099,9 +2105,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  m_Text: "You\u2019re just trying to enjoy your favorite video game, but you\u2019re
+    gaming in a very unstable environment. Deal with fires in your room as they come
+    up, all while not losing your game. Mouse over each of the six problems to view
+    instructions on how to fix the issue."
 --- !u!222 &1153817593
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2712,7 +2719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0f2f654d465574ca344a296f4c43b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionsText: Yung Brother
+  instructionsText: "Your stupid brother can\u2019t get enough of stuffing his face
+    with Doritos. He\u2019s pretty liable to choking, so give him the heimlich by
+    clicking on him repeatedly."
 --- !u!1 &1769400738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,7 +2768,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0f2f654d465574ca344a296f4c43b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionsText: Yung Generator
+  instructionsText: The generator powering everything in your room needs to be cranked
+    every once in a while. Keep the power going by clicking and dragging its handle
+    in a circle.
 --- !u!50 &1769400741
 Rigidbody2D:
   serializedVersion: 4
